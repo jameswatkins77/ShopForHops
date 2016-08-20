@@ -75,9 +75,9 @@ app.filter('inStockFilter', function() {
   return function(input) {
     var output;
       if (input === true) {
-        output = "yes";
+        output = "Yes";
       } else {
-        output = "no";
+        output = "No";
       }
     return output;
   }
