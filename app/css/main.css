@@ -1,0 +1,107 @@
+body{
+  background-color: #e6e6e6;
+}
+.right{
+  float: right;
+}
+h4, input, select{
+  display: inline-block;
+}
+.search_titles{
+  font-size: 12px;
+}
+.header_title{
+  color: #FA6843;
+  font-weight: bolder;
+  text-shadow: 1px 1px black;
+}
+td, th {
+  border: 1px solid #D3D3D3;
+}
+.table_image{
+  width: 18%;
+  padding: 1%;
+}
+.tea_image{
+  box-shadow: 2px 2px 1px #999999;
+}
+.table_info{
+  width: 79%;
+  padding: 1%;
+}
+.tea_table{
+  width: 100%;
+}
+.table_header{
+  padding: 1%;
+}
+.shopping_cart{
+  margin-bottom: 1%;
+}
+.left{
+  float: left;
+  width: 79%;
+  display: block;
+}
+.right{
+  float: right;
+  width: 18%;
+}
+.tea_info_list{
+  list-style-type: none;
+}
+.category_item{
+  margin-left: 6%;
+}
+.sort_by_price{
+  margin-left: 65%;
+}
+.shoppingCartTableData{
+  text-align: center;
+}
+.orderTotal{
+  position: relative;
+  width: 35%;
+  margin-left: 70%;
+  margin-top: -4.5%;
+}
+.myShoppingBag{
+  position: relative;
+  width: 35%;
+  margin-top: 0;
+  margin-bottom: 2%;
+}
+.edit{
+  width: 100px;
+  margin-bottom: 5%;
+}
+.remove{
+  width: 100px;
+}
+.editRemoveDiv{
+  padding: 2%;
+}
+.placeOrder{
+  margin-left: 90%;
+  margin-top: 1%;
+  color: white;
+  background-color: gray;
+}
+.about_us_image{
+  width: 50%;
+  box-shadow: 10px 10px 5px black;
+  border-radius: 5%;
+}
+tr:nth-child(even) {
+    background-color: #d9d9d9;
+}
+tr:nth-child(odd) {
+    color: black;
+}
+th{
+  background-color: #cccccc;
+  border: 1px solid #b3b3b3;
+}
+tr{
+  border: 1px solid #a9a9a9;
+}
