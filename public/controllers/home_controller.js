@@ -97,6 +97,8 @@ app.controller('home_controller', function ($scope, shoppingCartFactory) {
   $scope.view.orderConfirmation = function(){
     $scope.view.showPaymentScreen = false;
     $scope.view.viewOrderConfirmation = true;
+    $scope.view.shoppingCart = [];
+    $scope.view.bag = 0;
   }
 })
 
