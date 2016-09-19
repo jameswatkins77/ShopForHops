@@ -215,54 +215,54 @@
     MEAN Tea was created for the sole reason of creating tea products that aspire to new heights in both quality and value.  Enhancing our value is our promise to deliver the highest level of customer service excellence, by serving you only the finest tea products available.
   </h2>
 </div>
-<div class="" ng-show="view.showPaymentScreen === true">
+<div class="paymentScreen" ng-show="view.showPaymentScreen === true">
   <form class="form-horizontal">
-    <div class="form-group col-xs-6">
-      <label for="inputEmail3" class="col-sm-2 control-label">Create Username:</label>
+    <div class="form-group">
+      <label for="inputUsername" class="col-sm-2 control-label" ng-model="username">Create Username:</label>
       <div class="col-sm-10">
-        <input type="email" class="form-control" id="inputEmail3" placeholder="Username">
+        <input type="email" class="form-control" id="inputUsername" placeholder="Username">
       </div>
     </div>
-    <div class="form-group col-xs-6">
-      <label for="inputPassword3" class="col-sm-2 control-label">Password:</label>
+    <div class="form-group">
+      <label for="inputPassword" class="col-sm-2 control-label" ng-model="password">Password:</label>
       <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
       </div>
     </div>
-    <div class="form-group col-xs-6">
-      <label for="inputPassword3" class="col-sm-2 control-label">Repeat Password:</label>
+    <div class="form-group">
+      <label for="inputPassword2" class="col-sm-2 control-label">Repeat Password:</label>
       <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
       </div>
     </div>
-    <div class="form-group col-xs-6">
-      <label for="inputPassword3" class="col-sm-2 control-label">Full Name:</label>
+    <div class="form-group">
+      <label for="inputFullName" class="col-sm-2 control-label" ng-model="fullName">Full Name:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputPassword3" placeholder="Full Name">
+        <input type="text" class="form-control" id="inputFullName" placeholder="Full Name">
       </div>
     </div>
-    <div class="form-group col-xs-6">
-      <label for="inputPassword3" class="col-sm-2 control-label">Address Line 1:</label>
+    <div class="form-group">
+      <label for="inputAddressLine1" class="col-sm-2 control-label" ng-model="AddressLine1">Address Line 1:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputPassword3" placeholder="Address Line 1">
+        <input type="text" class="form-control" id="inputAddressLine1" placeholder="Address Line 1">
       </div>
     </div>
-    <div class="form-group col-xs-6">
-      <label for="inputPassword3" class="col-sm-2 control-label">Address Line 2:</label>
+    <div class="form-group">
+      <label for="inputAddressLine2" class="col-sm-2 control-label" ng-model="AddressLine2">Address Line 2:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputPassword3" placeholder="Address Line 2">
+        <input type="text" class="form-control" id="inputAddressLine2" placeholder="Address Line 2">
       </div>
     </div>
-    <div class="row">
-      <div class="form-group col-xs-3 cityFormInput">
-        <label for="inputPassword3" class="col-sm-2 control-label">City:</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword3" placeholder="City">
-        </div>
+    <div class="form-group">
+      <label for="inputCity" class="col-sm-2 control-label" ng-model="city">City:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputCity" placeholder="City">
       </div>
-      <div class="col-xs-1">
-        <label for="inputPassword3" class="col-sm-2 control-label">State:</label>
-        <select class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="inputState" class="col-sm-2 control-label" ng-model="state">State:</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="inputState">
           <option>AL</option>
           <option>AK</option>
           <option>AZ</option>
@@ -315,26 +315,60 @@
           <option>WY</option>
         </select>
       </div>
-      <div class="form-group col-xs-2">
-        <label for="inputPassword3" class="col-sm-2 control-label">Zip Code:</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputPassword3" placeholder="Zip Code">
-        </div>
+    </div>
+    <div class="form-group">
+      <label for="inputZip" class="col-sm-2 control-label" ng-model="zip">Zip:</label>
+      <div class="col-sm-10 zip">
+        <input type="number" class="form-control" id="inputZip" ng-maxlength="5" placeholder="Zip Code">
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox"> Remember me
+            <input type="checkbox" ng-model="shippingInfoCheck"> Click if shipping information is the same.
+          </label>
+        </div>
+      </div>
+    </div>
+  </form>
+  <hr>
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label for="inputCC" class="col-sm-2 control-label" ng-model="creditCardNumber">Credit Card #:</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="inputCC" placeholder="####-####-####-####">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputCCExpiration" class="col-sm-2 control-label" ng-model="creditCardExpiration">Expiration Date:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputCCExpiration" placeholder="##/##">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputCCSecurity" class="col-sm-2 control-label" ng-model="creditCardSecurityCode">Security Code:</label>
+      <div class="col-sm-10">
+        <input type="number" class="form-control" id="inputCCSecurity">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" ng-model="mailOptOut"> Click if you'd like to opt out from our mailing list.
           </label>
         </div>
       </div>
     </div>
     <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Sign in</button>
+      <div class="col-sm-offset-2 col-sm-10 submitOrder">
+        <button type="submit" class="btn btn-warning" ng-click="view.orderConfirmation()">Submit Order</button>
       </div>
     </div>
   </form>
+</div>
+<div class="thankYou" ng-show="view.viewOrderConfirmation === true">
+  <h1>All of us at MEAN Tea appreciate your business!</h1>
+  <h3>Expect a confirmation email shortly.  If there are any concerns with your order, please contact customer service at 1-800-888-8888.</h3>
 </div>

@@ -105,6 +105,17 @@ th{
 tr{
   border: 1px solid #a9a9a9;
 }
-.cityFormInput{
-  margin-left: 11.8% !important;
+.paymentScreen{
+  width: 60%;
+  margin-left: 15%;
+}
+.form-control{
+  color: green;
+}
+.submitOrder{
+  margin-left: 50%;
+}
+.thankYou{
+  width: 80%;
+  margin-left: 10%;
 }

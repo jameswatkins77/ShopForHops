@@ -58,6 +58,7 @@ app.controller('home_controller', function ($scope, shoppingCartFactory) {
     $scope.view.viewOrderScreen = true;
     $scope.view.showAboutUs = false;
     $scope.view.showPaymentScreen = false;
+    $scope.view.viewOrderConfirmation = false;
   }
 
   $scope.view.editCheckoutScreen = false;
@@ -81,6 +82,7 @@ app.controller('home_controller', function ($scope, shoppingCartFactory) {
     $scope.view.viewOrderScreen = false;
     $scope.view.viewCheckoutScreen = false;
     $scope.view.showPaymentScreen = false;
+    $scope.view.viewOrderConfirmation = false;
   }
 
   $scope.view.showPaymentScreen = false;
@@ -88,6 +90,13 @@ app.controller('home_controller', function ($scope, shoppingCartFactory) {
   $scope.view.showPaymentScreenTrue = function(){
     $scope.view.showPaymentScreen = true;
     $scope.view.viewCheckoutScreen = false;
+  }
+
+  $scope.view.viewOrderConfirmation = false;
+
+  $scope.view.orderConfirmation = function(){
+    $scope.view.showPaymentScreen = false;
+    $scope.view.viewOrderConfirmation = true;
   }
 })
 
