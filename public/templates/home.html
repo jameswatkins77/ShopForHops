@@ -66,8 +66,8 @@
         </div>
         <div class="right">
           <h2>Quantity:</h2>
-          <select ng-model="view.quantity">
-            <option>1</option>
+          <select ng-model="quantity">
+            <option selected="selected">1</option>
             <option>2</option>
             <option>3</option>
             <option>4</option>
@@ -78,8 +78,8 @@
             <option>9</option>
             <option>10</option>
           </select>
-          <button type="button" class="btn btn-warning" ng-click="view.addToCart(tea)">Add to Bag</button>
-          <h4 ng-show="$scope.view.seeAlert === true">You must enter a quantity!</h4>
+          <button type="button" class="btn btn-warning" ng-click="view.addToCart(tea, quantity)">Add to Bag</button>
+          <h4 ng-show="view.seeAlert === true">You must enter a quantity!</h4>
         </div>
       </td>
     </tr>
@@ -139,7 +139,7 @@
       </td>
     </tr>
   </table>
-  <button type="button" class="btn btn-default placeOrder">Place Order</button>
+  <button type="button" class="btn btn-default placeOrder" ng-click="view.showPaymentScreenTrue()">Place Order</button>
 </div>
 <div class="checkoutScreen" ng-show="view.editCheckoutScreen === true">
   <div>
@@ -161,7 +161,6 @@
         <h4>Subtotal</h4>
       </th>
       <th>
-
       </th>
     </tr>
     <tr ng-repeat="tea in view.shoppingCart">
@@ -185,7 +184,7 @@
         </div>
       </td>
       <td class="shoppingCartTableData">
-        <select ng-model="view.quantityUpdated">
+        <select ng-model="quantityUpdated">
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -202,12 +201,12 @@
         <h4>{{tea.quantity*tea.price/100 | currency}}</h4>
       </td>
       <td class="editRemoveDiv">
-        <button type="button" class="btn btn-warning edit" ng-click="view.saveUpdatedQuantity(tea)">Save</button>
+        <button type="button" class="btn btn-warning edit" ng-click="view.saveUpdatedQuantity(tea, quantityUpdated)">Save</button>
         <button type="button" class="btn btn-danger remove" ng-click="view.removeFromCart(tea)">Remove</button>
       </td>
     </tr>
   </table>
-  <button type="button" class="btn btn-default placeOrder">Place Order</button>
+  <button type="button" class="btn btn-default placeOrder" ng-click="view.showPaymentScreenTrue()">Place Order</button>
 </div>
 <div class="" ng-show="view.showAboutUs === true">
   <img class="about_us_image" src="http://az-teas.com/wp-content/uploads/2014/05/tea-cup1.jpg" alt="tea" />
@@ -215,4 +214,126 @@
   <h2>
     MEAN Tea was created for the sole reason of creating tea products that aspire to new heights in both quality and value.  Enhancing our value is our promise to deliver the highest level of customer service excellence, by serving you only the finest tea products available.
   </h2>
+</div>
+  <form class="form-horizontal">
+    <div class="form-group col-xs-6">
+      <label for="inputEmail3" class="col-sm-2 control-label">Create Username:</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Username">
+      </div>
+    </div>
+    <div class="form-group col-xs-6">
+      <label for="inputPassword3" class="col-sm-2 control-label">Password:</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-group col-xs-6">
+      <label for="inputPassword3" class="col-sm-2 control-label">Repeat Password:</label>
+      <div class="col-sm-10">
+        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-group col-xs-6">
+      <label for="inputPassword3" class="col-sm-2 control-label">Full Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputPassword3" placeholder="Full Name">
+      </div>
+    </div>
+    <div class="form-group col-xs-6">
+      <label for="inputPassword3" class="col-sm-2 control-label">Address Line 1:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputPassword3" placeholder="Address Line 1">
+      </div>
+    </div>
+    <div class="form-group col-xs-6">
+      <label for="inputPassword3" class="col-sm-2 control-label">Address Line 2:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="inputPassword3" placeholder="Address Line 2">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-xs-3 cityFormInput">
+        <label for="inputPassword3" class="col-sm-2 control-label">City:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputPassword3" placeholder="City">
+        </div>
+      </div>
+      <div class="col-xs-1">
+        <label for="inputPassword3" class="col-sm-2 control-label">State:</label>
+        <select class="form-control">
+          <option>AL</option>
+          <option>AK</option>
+          <option>AZ</option>
+          <option>AR</option>
+          <option>CA</option>
+          <option>CO</option>
+          <option>CT</option>
+          <option>DE</option>
+          <option>FL</option>
+          <option>GA</option>
+          <option>HI</option>
+          <option>ID</option>
+          <option>IL</option>
+          <option>IN</option>
+          <option>IA</option>
+          <option>KS</option>
+          <option>KY</option>
+          <option>LA</option>
+          <option>ME</option>
+          <option>MD</option>
+          <option>MA</option>
+          <option>MI</option>
+          <option>MN</option>
+          <option>MS</option>
+          <option>MO</option>
+          <option>MT</option>
+          <option>NE</option>
+          <option>NV</option>
+          <option>NH</option>
+          <option>NJ</option>
+          <option>NM</option>
+          <option>NY</option>
+          <option>NC</option>
+          <option>ND</option>
+          <option>OH</option>
+          <option>OK</option>
+          <option>OR</option>
+          <option>PA</option>
+          <option>RI</option>
+          <option>SC</option>
+          <option>SD</option>
+          <option>TN</option>
+          <option>TX</option>
+          <option>UT</option>
+          <option>VT</option>
+          <option>VA</option>
+          <option>WA</option>
+          <option>WV</option>
+          <option>WI</option>
+          <option>WY</option>
+        </select>
+      </div>
+      <div class="form-group col-xs-2">
+        <label for="inputPassword3" class="col-sm-2 control-label">Zip Code:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputPassword3" placeholder="Zip Code">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Sign in</button>
+      </div>
+    </div>
+  </form>
 </div>
