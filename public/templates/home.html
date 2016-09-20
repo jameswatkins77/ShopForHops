@@ -208,6 +208,10 @@
   </table>
   <button type="button" class="btn btn-default placeOrder" ng-click="view.showPaymentScreenTrue()">Place Order</button>
 </div>
+<div class="emptyCartAlert" ng-show="view.seeAlertEmptyCart === true">
+  <h1>There are no items in your cart.</h1>
+  <h2>Please add items to cart before proceeding.</h2>
+</div>
 <div class="" ng-show="view.showAboutUs === true">
   <img class="about_us_image" src="http://az-teas.com/wp-content/uploads/2014/05/tea-cup1.jpg" alt="tea" />
   <h1><em>About MEAN Tea!</em></h1>
@@ -331,7 +335,7 @@
         </div>
       </div>
     </div>
-    {{payInfo.$valid}}
+    <!-- {{payInfo.$valid}} -->
   <hr>
   <img class="creditCards" alt='Credit card logos' title='Credit card logos' src='//payments.intuit.com/payments/landing_pages/LB/default.jsp?c=VMAD&l=H&s=1&b=e6e6e6'/>
   <div class="form-group">

@@ -60,6 +60,7 @@ app.controller('home_controller', function ($scope, shoppingCartFactory) {
     $scope.view.showPaymentScreen = false;
     $scope.view.viewOrderConfirmation = false;
     $scope.view.showPaymentScreenOrderTotal = false;
+    $scope.view.seeAlertEmptyCart = false;
   }
 
   $scope.view.editCheckoutScreen = false;
@@ -84,15 +85,21 @@ app.controller('home_controller', function ($scope, shoppingCartFactory) {
     $scope.view.viewCheckoutScreen = false;
     $scope.view.showPaymentScreen = false;
     $scope.view.viewOrderConfirmation = false;
+    $scope.view.seeAlertEmptyCart = false;
   }
 
   $scope.view.showPaymentScreen = false;
   $scope.view.showPaymentScreenOrderTotal = false;
+  $scope.view.seeAlertEmptyCart = false;
 
   $scope.view.showPaymentScreenTrue = function(){
-    $scope.view.showPaymentScreenOrderTotal = true;
-    $scope.view.showPaymentScreen = true;
-    $scope.view.viewCheckoutScreen = false;
+    if ($scope.view.bag === 0) {
+      $scope.view.seeAlertEmptyCart = true;
+    } else {
+      $scope.view.showPaymentScreenOrderTotal = true;
+      $scope.view.showPaymentScreen = true;
+      $scope.view.viewCheckoutScreen = false;
+    }
   }
 
   $scope.view.viewOrderConfirmation = false;
@@ -101,6 +108,7 @@ app.controller('home_controller', function ($scope, shoppingCartFactory) {
     $scope.view.showPaymentScreen = false;
     $scope.view.viewOrderConfirmation = true;
     $scope.view.showPaymentScreenOrderTotal = false;
+    $scope.view.seeAlertEmptyCart = false;
     $scope.view.shoppingCart = [];
     $scope.view.bag = 0;
   }
