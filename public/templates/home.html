@@ -216,52 +216,52 @@
   </h2>
 </div>
 <div class="paymentScreen" ng-show="view.showPaymentScreen === true">
-  <form class="form-horizontal">
+  <form name="payInfo" class="form-horizontal">
     <div class="form-group">
       <label for="inputUsername" class="col-sm-2 control-label" ng-model="username">Create Username:</label>
-      <div class="col-sm-10">
-        <input type="email" class="form-control" id="inputUsername" placeholder="Username">
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="inputUsername" placeholder="Username" required>
       </div>
     </div>
     <div class="form-group">
       <label for="inputPassword" class="col-sm-2 control-label" ng-model="password">Password:</label>
-      <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+      <div class="col-sm-3">
+        <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
       </div>
     </div>
     <div class="form-group">
       <label for="inputPassword2" class="col-sm-2 control-label">Repeat Password:</label>
-      <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+      <div class="col-sm-3">
+        <input type="password" class="form-control" id="inputPassword2" placeholder="Password" required>
       </div>
     </div>
     <div class="form-group">
       <label for="inputFullName" class="col-sm-2 control-label" ng-model="fullName">Full Name:</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputFullName" placeholder="Full Name">
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="inputFullName" placeholder="Full Name" required>
       </div>
     </div>
     <div class="form-group">
       <label for="inputAddressLine1" class="col-sm-2 control-label" ng-model="AddressLine1">Address Line 1:</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputAddressLine1" placeholder="Address Line 1">
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="inputAddressLine1" placeholder="Address Line 1" required>
       </div>
     </div>
     <div class="form-group">
       <label for="inputAddressLine2" class="col-sm-2 control-label" ng-model="AddressLine2">Address Line 2:</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputAddressLine2" placeholder="Address Line 2">
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="inputAddressLine2" placeholder="Address Line 2" required>
       </div>
     </div>
     <div class="form-group">
       <label for="inputCity" class="col-sm-2 control-label" ng-model="city">City:</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="inputCity" placeholder="City">
+      <div class="col-sm-3">
+        <input type="text" class="form-control" id="inputCity" placeholder="City" required>
       </div>
     </div>
     <div class="form-group">
       <label for="inputState" class="col-sm-2 control-label" ng-model="state">State:</label>
-      <div class="col-sm-10">
+      <div class="col-sm-2">
         <select class="form-control" id="inputState">
           <option>AL</option>
           <option>AK</option>
@@ -318,37 +318,36 @@
     </div>
     <div class="form-group">
       <label for="inputZip" class="col-sm-2 control-label" ng-model="zip">Zip:</label>
-      <div class="col-sm-10 zip">
-        <input type="number" class="form-control" id="inputZip" ng-maxlength="5" placeholder="Zip Code">
+      <div class="col-sm-3 zip">
+        <input type="number" class="form-control" id="inputZip" maxlength="5" placeholder="Zip Code">
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
         <div class="checkbox">
           <label>
-            <input type="checkbox" ng-model="shippingInfoCheck"> Click if shipping information is the same.
+            <input type="checkbox" ng-model="shippingInfoCheck"> Click if billing information is the same.
           </label>
         </div>
       </div>
     </div>
-  </form>
+    {{payInfo.$valid}}
   <hr>
-  <form class="form-horizontal">
     <div class="form-group">
       <label for="inputCC" class="col-sm-2 control-label" ng-model="creditCardNumber">Credit Card #:</label>
-      <div class="col-sm-10">
+      <div class="col-sm-4">
         <input type="number" class="form-control" id="inputCC" placeholder="####-####-####-####">
       </div>
     </div>
     <div class="form-group">
       <label for="inputCCExpiration" class="col-sm-2 control-label" ng-model="creditCardExpiration">Expiration Date:</label>
-      <div class="col-sm-10">
+      <div class="col-sm-2">
         <input type="text" class="form-control" id="inputCCExpiration" placeholder="##/##">
       </div>
     </div>
     <div class="form-group">
       <label for="inputCCSecurity" class="col-sm-2 control-label" ng-model="creditCardSecurityCode">Security Code:</label>
-      <div class="col-sm-10">
+      <div class="col-sm-2">
         <input type="number" class="form-control" id="inputCCSecurity">
       </div>
     </div>
@@ -368,7 +367,15 @@
     </div>
   </form>
 </div>
+<div class="paymentScreenOrderTotal" ng-show="view.showPaymentScreenOrderTotal === true">
+  <h1><strong>Order Summary:</strong></h1>
+  <h2>Subtotal: {{view.orderTotal | currency}}</h2>
+  <h2>Tax: {{view.orderTotal * 0.07 | currency}}</h3>
+  <h2>Shipping/Handling: $5.00</h2>
+  <hr>
+  <h1><strong>Total:</strong> {{view.orderTotal + view.orderTotal * 0.07 + 5 | currency}}</h2>
+</div>
 <div class="thankYou" ng-show="view.viewOrderConfirmation === true">
-  <h1>All of us at MEAN Tea appreciate your business!</h1>
+  <h1>All of us at <strong>MEAN Tea</strong> appreciate your business!</h1>
   <h3>Expect a confirmation email shortly.  If there are any concerns with your order, please contact customer service at 1-800-888-8888.</h3>
 </div>

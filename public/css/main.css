@@ -106,16 +106,29 @@ tr{
   border: 1px solid #a9a9a9;
 }
 .paymentScreen{
-  width: 60%;
-  margin-left: 15%;
+  width: 50%;
+  margin-left: 5%;
+  float: left;
 }
 .form-control{
   color: green;
 }
 .submitOrder{
-  margin-left: 50%;
+  margin-left: 16.5%
 }
 .thankYou{
   width: 80%;
   margin-left: 10%;
+}
+.paymentScreenOrderTotal{
+  text-align: right;
+  padding: 5%;
+  background-color: white;
+  width: 39%;
+  float: right;
+  border-radius: 25px;
+  margin-right: 5%;
+}
+.thankYou{
+  padding: 2%;
 }
