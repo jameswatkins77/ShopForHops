@@ -59,6 +59,7 @@ app.controller('home_controller', function ($scope, shoppingCartFactory) {
     $scope.view.showAboutUs = false;
     $scope.view.showPaymentScreen = false;
     $scope.view.viewOrderConfirmation = false;
+    $scope.view.showPaymentScreenOrderTotal = false;
   }
 
   $scope.view.editCheckoutScreen = false;
