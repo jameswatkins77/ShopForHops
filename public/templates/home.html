@@ -1,4 +1,4 @@
-<h1 class="header_title"><em>Welcome to MEAN Tea!</em></h1>
+<h1 class="header_title"><em>Welcome to ShopForHops!</em></h1>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="#" ng-click="view.showAboutUsTrue()">About</a></li>
-        <li><a href="mailto:customerService@MeanTea.com">Contact</a></li>
+        <li><a href="mailto:customerService@ShopForHops.com">Contact</a></li>
     </div>
   </div>
 </nav>
@@ -21,25 +21,25 @@
   <h4 class="search_titles">Search by Category</h4>
   <select class="" name="" ng-model="searchDropdown">
     <option></option>
-    <option>dark</option>
-    <option>cold</option>
-    <option>awesome</option>
-    <option>dry</option>
-    <option>hot</option>
-    <option>summer</option>
-    <option>lucid</option>
-    <option>warm</option>
-    <option>winter</option>
-    <option>spring</option>
+    <option>Ale</option>
+    <option>IPA</option>
+    <option>Pale Ale</option>
+    <option>Porter</option>
+    <option>Lager</option>
+    <option>Pilsner</option>
+    <option>Kolsch</option>
+    <option>ESB</option>
+    <option>Stout</option>
+    <option>Hefeweizen</option>
   </select>
-  <h4 class="search_titles">Search by Name</h4>
+  <h4 class="search_titles">Search by Keyword:</h4>
   <input type="text" name="name" value="" ng-model="searchText">
   <button type="button" class="btn btn-danger right shopping_cart" ng-click="view.openCheckoutScreen()">Checkout | Bag: {{view.bag}}</button>
 </div>
 <div class="" ng-show="view.viewOrderScreen === true">
   <table class="tea_table">
     <tr>
-      <th class="table_header"><h4>Tea</h4></th>
+      <th class="table_header"><h4>Hops</h4></th>
       <th class="table_header">
         <h4>Information</h4>
         <h4 class="sort_by_price">Sort By Price:</h4>
@@ -53,10 +53,10 @@
         <div class="left">
           <ul class="tea_info_list">
             <li><h2><strong>{{tea.name}}</strong></h2></li>
-            <li><h4><strong>Price:</strong> {{tea.price/100 | currency}}</h4></li>
-            <li><h4><strong>Ingredients:</strong> {{tea.ingredients}}</h4></li>
+            <li><h4><strong>Price (per Oz):</strong> {{tea.price/100 | currency}}</h4></li>
+            <li><h4><strong>Flavor Perception:</strong> {{tea.ingredients}}</h4></li>
             <li><h4><strong>Rating:</strong> {{tea.rating}}</h4></li>
-            <li><h4><strong>Caffeine:</strong> {{tea.caffeineScale}}</h4></li>
+            <li><h4><strong>Acid Range (alpha %):</strong> {{tea.caffeineScale}}</h4></li>
             <li><h4><strong>In Stock?</strong> {{tea.inStock | inStockFilter}}<h4></li>
             <li><h4><strong>Categories:</strong></h4></li>
           </ul>
@@ -93,7 +93,7 @@
   <table class="tea_table">
     <tr>
       <th class="table_header">
-        <h4>Tea</h4>
+        <h4>Hops</h4>
       </th>
       <th class="table_header">
         <h4>Information</h4>
@@ -109,16 +109,16 @@
     </tr>
     <tr ng-repeat="tea in view.shoppingCart">
       <td class="table_image">
-        <img src="{{tea.imageUrl}}" alt="Picture of Tea" />
+        <img class="tea_image" src="{{tea.imageUrl}}" alt="Picture of Tea" />
       </td>
       <td class="table_info">
         <div class="left">
           <ul class="tea_info_list">
             <li><h2><strong>{{tea.name}}</strong></h2></li>
-            <li><h4><strong>Price:</strong> {{tea.price/100 | currency}}</h4></li>
+            <li><h4><strong>Price (per Oz):</strong> {{tea.price/100 | currency}}</h4></li>
             <li><h4><strong>Ingredients:</strong> {{tea.ingredients}}</h4></li>
             <li><h4><strong>Rating:</strong> {{tea.rating}}</h4></li>
-            <li><h4><strong>Caffeine:</strong> {{tea.caffeineScale}}</h4></li>
+            <li><h4><strong>Acid Range (alpha %):</strong> {{tea.caffeineScale}}</h4></li>
             <li><h4><strong>In Stock?</strong> {{tea.inStock}}<h4></li>
             <li><h4><strong>Categories:</strong></h4></li>
           </ul>
@@ -165,14 +165,14 @@
     </tr>
     <tr ng-repeat="tea in view.shoppingCart">
       <td class="table_image">
-        <img src="{{tea.imageUrl}}" alt="Picture of Tea" />
+        <img class="tea_image" src="{{tea.imageUrl}}" alt="Picture of Tea" />
       </td>
       <td class="table_info">
         <div class="left">
           <ul class="tea_info_list">
             <li><h2><strong>{{tea.name}}</strong></h2></li>
-            <li><h4><strong>Price:</strong> {{tea.price/100 | currency}}</h4></li>
-            <li><h4><strong>Ingredients:</strong> {{tea.ingredients}}</h4></li>
+            <li><h4><strong>Price (per Oz):</strong> {{tea.price/100 | currency}}</h4></li>
+            <li><h4><strong>Flavor Perception:</strong> {{tea.ingredients}}</h4></li>
             <li><h4><strong>Rating:</strong> {{tea.rating}}</h4></li>
             <li><h4><strong>Caffeine:</strong> {{tea.caffeineScale}}</h4></li>
             <li><h4><strong>In Stock?</strong> {{tea.inStock}}<h4></li>
@@ -213,9 +213,9 @@
   <h2>Please add items to cart before proceeding.</h2>
 </div>
 <div ng-show="view.showAboutUs === true">
-  <img class="about_us_image" src="http://az-teas.com/wp-content/uploads/2014/05/tea-cup1.jpg" alt="tea" />
+  <img class="about_us_image" src="http://www.leeners.com/_img/prod/516x258/beerstillwithhops.jpg" alt="tea" />
   <h2 class="aboutUs">
-    <strong>MEAN Tea</strong> was created for the sole reason of creating tea products that aspire to new heights, in both quality, and value.  Enhancing our value is our promise to deliver the highest level of customer service excellence, by serving you only the finest tea products available.
+    <strong>ShopForHops</strong> was created for the sole reason of providing hops that aspire to new heights, in both quality, and value.  Enhancing our value is our promise to deliver the highest level of customer service excellence, by serving you only the finest hops available.
   </h2>
 </div>
 <div class="paymentScreen" ng-show="view.showPaymentScreen === true">
@@ -386,6 +386,6 @@
   <h1><strong>Total:</strong> {{view.orderTotal + view.orderTotal * 0.07 + 5 | currency}}</h2>
 </div>
 <div class="thankYou" ng-show="view.viewOrderConfirmation === true">
-  <h1>All of us at <strong>MEAN Tea</strong> appreciate your business!</h1>
+  <h1>All of us at <strong>ShopForHops</strong> appreciate your business!</h1>
   <h3>Expect a confirmation email shortly.  If there are any concerns with your order, please contact customer service at 1-800-888-8888.</h3>
 </div>

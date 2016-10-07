@@ -23,6 +23,8 @@ td, th {
   padding: 1%;
 }
 .tea_image{
+  width: 250px;
+  height: 250px;
   box-shadow: 2px 2px 1px #999999;
 }
 .table_info{
