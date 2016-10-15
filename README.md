@@ -1,3 +1,4 @@
+##ShopForHops
 ## Synopsis
 
 This is an example of an online tea retailer, single-page-app.  It was made with HTML/CSS/JS/AngularJS.
